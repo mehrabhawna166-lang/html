@@ -1,156 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>sign in page</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
-    <style>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
 
-  *{
-            margin: 0;
-            padding: 0;
-  }
+    body {
+      background: linear-gradient(45deg, rgb(230, 91, 91), rgb(84, 84, 245));
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
 
-  body {
-    background-image: linear-gradient(45deg,rgb(230, 91, 91) , rgb(84, 84, 245));
-    width:100%;
-    height: 100vh;
-}
-
+    /* Navbar */
     .navbar {
-text-decoration: none;
- /* width: 100%; */
-   height: 20px;
-  display: flex;
-  justify-content: space-between;
-  padding: 5px;
-/* background-color: white; */
-  align-items: center;
-}
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background: rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+    }
 
-.navbar a{
-   text-decoration: none;
-    color: coral;
-    align-items: center;
-    font-size: 30px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    .navbar a.logo {
+      text-decoration: none;
+      color: #ffd700;
+      font-size: 28px;
+      font-weight: 600;
+    }
 
-}
-.navlinks {
-/*text-decoration: none;*/
- list-style: none;
- display: flex;
- gap: 20px;
+    .navlinks {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
 
+    .navlinks a {
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+      transition: color 0.3s ease;
+    }
 
-}
+    .navlinks a:hover {
+      color: #ffd700;
+    }
 
-.navlinks a {
-text-decoration: none;
+    .btn {
+      display: flex;
+      gap: 10px;
+    }
 
-color: white;
-font-size: 30px;
+    .btn button {
+      background: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
 
-align-items: center;
-font-family: cursive;
-display: flex;
+    .btn button:hover {
+      background: #f5a623;
+    }
 
-}
+    .btn a {
+      text-decoration: none;
+      color: black;
+      font-weight: 500;
+      font-size: 14px;
+    }
 
-.nav {
+    /* Container */
+    .container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 10px;
+    }
 
-    width: 70px;
-    height: 30px;
-    border-radius: 20px;
-    font-family: cursive;
-    
+    /* Form */
+    .form {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(12px);
+      border-radius: 16px;
+      padding: 40px;
+      width: 350px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+      color: white;
+    }
 
-}
+    .form h1 {
+      text-align: center;
+      margin-bottom: 25px;
+      font-size: 28px;
+      font-weight: 600;
+    }
 
-.nav a{
-    font-size: 12px;
-    color: black;
-}
+    .form label {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 15px;
+    }
 
-.container{
-    display: flex;
-    width: 100%;
-    height: 100vh;
-    align-items: center;
-    justify-content: center;
-}
+    .form input[type="text"],
+    .form input[type="email"],
+    .form input[type="password"],
+    .form input[type="date"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 18px;
+      border: none;
+      border-radius: 8px;
+      outline: none;
+      font-size: 14px;
+    }
 
-.form{
-    width: 100%;
-font-size: 20px;
-border: 1px solid black;
- margin: 100;
- padding: 20px;
-border-radius: 12px;
-}
+    .form input[type="checkbox"] {
+      margin-right: 8px;
+    }
 
- </style>
-    
+    .form input[type="submit"] {
+      width: 100%;
+      background: white;
+      border: none;
+      color: black;
+      font-weight: 600;
+      padding: 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
 
+    .form input[type="submit"]:hover {
+      background: #f5a623;
+      color: white;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .form {
+        width: 90%;
+        padding: 30px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-       <nav class="navbar">
-        <a href="http//">
-      logo
-        </a>
-        
+  <nav class="navbar">
+    <a href="#" class="logo">MyLogo</a>
 
+    <ul class="navlinks">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
 
+    <div class="btn">
+      <button><a href="signin.html">Sign In</a></button>
+      <button><a href="login.html">Login</a></button>
+    </div>
+  </nav>
 
-<ul class="navlinks">
-<!--<li><a href="http://"></a>Home</li>
-<li><a href="http://"></a>Contact us</li>
-<li><a href="http://"></a>About us</li>
-<li><a href="http://"></a>Service</li>-->
-</ul>
-<div class="btn">
-    <button class="nav"><a href="signin.html">Sign-in</a></button>
-   <button class="nav"><a href="login.html">login</a></button>
-</div>
- </nav>
- <div class="container">
+  <div class="container">
+    <div class="form">
+      <form>
+        <h1>Sign In</h1>
 
-   <div class="form">
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" placeholder="Enter your first name" required>
 
-    <form>
-    <h1>Sign-in</h1>
-    <br>
-    <label for="">First name</label>
-    <br>
-    <input type="text" id="fname">
-    <br>
-    <label for="">last name</label>
-    <br>
-    <input type="text" id="lname">
-    <br>
-    <label for="">Email</label>
-    <br>
-    <input type="email" name="@gmail.com"
-    id="email">
-    <br>
-    <label for="">password</label>
-    <br>
-    <input type="text" name="name" id="pass">
-    
-    <br>
-    <br>
-    <input type="submit" value="submit" id="submit">
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" placeholder="Enter your last name" required>
 
-    <input type="checkbox" name="" id="">
-    <br>
-    <label for="">Date and Time</label>
-    <br>
-    <input type="date" name="" id="">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Enter your email" required>
 
+        <label for="pass">Password</label>
+        <input type="password" id="pass" placeholder="Create a password" required>
+
+        <div>
+          <input type="checkbox" id="terms">
+          <label for="terms">I agree to terms and conditions</label>
+        </div>
+
+        <label for="date">Date</label>
+        <input type="date" id="date" required>
+
+        <input type="submit" value="Submit">
       </form>
     </div>
-
-
+  </div>
 </body>
 </html>
