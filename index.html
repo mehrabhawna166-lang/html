@@ -82,12 +82,12 @@ display: flex;
 
     font-family: cursive;
     font-weight: 700;
-    font-size: 30px;
+    font-size: 50px;
     color: goldenrod;
 }
 
 .headingpara {
-    color: azure;
+    color: aqua;
 }
 
   .leftside {
@@ -131,6 +131,7 @@ width: 50%;
       font-size: 1.1rem;
       line-height: 1.6;
       margin-bottom: 20px;
+      color:black;
     }
 
     .about-left .btn {
@@ -191,10 +192,11 @@ width: 50%;
       }
     }
 
+    /*--SERVICE SECTION--*/
 .service-section {
     text-align: center;
     padding: 80px 10%;
-    background: linear-gradient(135deg, #ff9a9e 0%, #fac4c4 99%, #fad0c4 100%);
+    background: linear-gradient(0deg, #47ffb8 0%, #68fa9d 99%, #a7f897 100%);
     color: #333;
     font-family: 'Poppins', sans-serif;
   }
@@ -220,14 +222,16 @@ width: 50%;
   }
 
   .service-card {
-    background: #fff;
-    border-radius: 20px;
+    background: var(--card-bg);
+    border: 2px solid var(--secondary color);
+    border-radius: 15px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    width: 300px;
+    width: 280px;
     padding: 30px 20px;
-    transition: all 0.4s ease;
+    transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    cursor: pointer;
   }
 
   .service-card::before {
@@ -237,10 +241,10 @@ width: 50%;
     left: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle at center, rgba(255,255,255,0.3), transparent 60%);
+    background: radial-gradient(circle at center, rgba(255, 0, 255, 0.668) 10%, transparent 70%);
     transform: scale(0);
-    transition: transform 0.6s ease;
-    z-index: 0;
+    transition: 0.5s;
+    
   }
 
   .service-card:hover::before {
@@ -248,29 +252,30 @@ width: 50%;
   }
 
   .service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 25px rgba(0,0,0,0.15);
+    transform: translateY(-10px); scale: (1.03);
+    box-shadow: 0 0px 25px rgba(255, 0, 153, 0.968);
+    border-color: var(--accent-color);
   }
 
   .service-card .icon {
-    font-size: 3rem;
-    color: #ff6f61;
-    margin-bottom: 15px;
-    z-index: 1;
+    font-size: 40px;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+   
   }
 
   .service-card h3 {
-    color: #333;
-    margin-bottom: 10px;
+    color:var(--text-color);
+    margin-bottom: 20px;
     font-size: 1.4rem;
-    z-index: 1;
+    
   }
 
   .service-card p {
-    color: #555;
+    color:#a9b3c1;
     font-size: 1rem;
     line-height: 1.6;
-    z-index: 1;
+  
   }
 
   /* Responsive */
@@ -284,6 +289,262 @@ width: 50%;
       width: 90%;
     }
 }
+
+
+    /* ===== Contact Section ===== */
+    .contact-section {
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        padding: 60px 10%;
+    }
+
+    .contact-left {
+        flex: 1 1 400px;
+        max-width: 500px;
+        padding: 20px;
+        animation: slideInLeft 1s ease;
+    }
+
+    .contact-left h2 {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+        color: #ffdc73;
+    }
+
+    .contact-left p {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 25px;
+    }
+
+    .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .contact-info div {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 1rem;
+    }
+
+    .contact-info i {
+        background: #fff;
+        color: #dc2430;
+        padding: 8px;
+        border-radius: 50%;
+    }
+
+    .contact-right {
+        flex: 1 1 400px;
+        max-width: 500px;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(8px);
+        border-radius: 12px;
+        padding: 30px;
+        box-shadow: 0 0 20px rgba(255,255,255,0.1);
+        animation: slideInRight 1s ease;
+    }
+
+    .contact-right h3 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #ffdc73;
+    }
+
+    .contact-right input,
+    .contact-right textarea {
+        width: 100%;
+        padding: 12px 15px;
+        margin: 10px 0;
+        border: none;
+        border-radius: 8px;
+        outline: none;
+        background: rgba(255,255,255,0.8);
+    }
+
+    .contact-right textarea {
+        resize: none;
+        height: 120px;
+    }
+
+    .contact-right button {
+        width: 100%;
+        padding: 12px;
+        background: #ffdc73;
+        color: #333;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: 0.3s ease;
+    }
+
+    .contact-right button:hover {
+        background: #fff;
+        color: #dc2430;
+        transform: translateY(-3px);
+    }
+
+    /* ===== Animations ===== */
+    @keyframes slideInLeft {
+        from {opacity: 0; transform: translateX(-50px);}
+        to {opacity: 1; transform: translateX(0);}
+    }
+
+    @keyframes slideInRight {
+        from {opacity: 0; transform: translateX(50px);}
+        to {opacity: 1; transform: translateX(0);}
+    }
+
+    /* ===== Responsive Design ===== */
+    @media (max-width: 768px) {
+        .contact-section {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .contact-left, .contact-right {
+            max-width: 100%;
+        }
+
+        .contact-right {
+            margin-top: 30px;
+        }
+      }
+
+
+      * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+
+
+section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+  
+
+
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      max-width: 800px;
+      margin: 0 auto 40px;
+      color: #dcdcdc;
+    }
+
+
+      /* Common glass card */
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(20px);
+      border-radius: 20px;
+      padding: 40px;
+      margin-top: 20px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.3);
+      transition: all 0.4s ease;
+      max-width: 800px;
+      width: 90%;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      background: rgba(255,255,255,0.15);
+    }
+
+    .icon {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    /* Individual section backgrounds */
+    #web-dev {
+      background: linear-gradient(135deg, #00c6ff, #0072ff);
+    }
+
+    #uiux {
+      background: linear-gradient(135deg, #f093fb, #f5576c);
+    }
+
+    #app-integration {
+      background: linear-gradient(135deg, #43e97b, #38f9d7);
+    }
+
+    /* Buttons */
+    .btn {
+      background: #fff;
+      color: #000;
+      padding: 12px 25px;
+      border-radius: 30px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .btn:hover {
+      background: #000;
+      color: #fff;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      h2 {
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      .card {
+        padding: 30px 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .icon {
+        font-size: 2.5rem;
+      }
+
+      h2 {
+        font-size: 1.8rem;
+      }
+    }
+
+
+
 
  </style>
     
@@ -301,7 +562,7 @@ width: 50%;
 
 <ul class="navlinks">
   <li><a href="http://">Home</a></li>
-<li><a href="http://">Contact us</a></li>
+<li><a href="#contact">Contact us</a></li>
 <li><a href="#About">About us</a></li>
 <li><a href="#Service">Service</a></li>
 </ul>
@@ -350,7 +611,7 @@ width: 50%;
 
     <div class="about-right">
       <div class="image-placeholder">
-        Your Image Here
+        <img src="img.jpg..09-removebg-preview.png" height="340px" width="430px">
       </div>
     </div>
   </section>
@@ -371,7 +632,7 @@ width: 50%;
     </div>
 
     <div class="service-card">
-      <div class="icon">🎨</div>
+      <div class=" icon">🎨</div>
       <h3>UI / UX Design</h3>
       <p>
         Crafting clean, user-focused designs that are both visually appealing and easy to navigate.
@@ -383,8 +644,76 @@ width: 50%;
       <h3>App Integration</h3>
       <p>
         Seamless integration of APIs and third-party tools to enhance app functionality and automation
+      </section>
 
-        
+         <!-- ===== CONTACT SECTION ===== -->
+    <section class="contact-section" id="contact">
+      
+        <div class="contact-left">
+            <h2>Get in Touch 🌍</h2>
+            <p>We’d love to hear from you! Whether you have a question, feedback, or a project idea, feel free to reach out to us anytime.</p>
+
+            <div class="contact-info">
+                <div><i>📍</i> 123 Innovation Street, Tech City</div>
+                <div><i>📧</i> hello@yourdomain.com</div>
+                <div><i>📞</i> +1 (555) 123-4567</div>
+            </div>
+        </div>
+
+        <div class="contact-right">
+            <h3>Send a Message ✉️</h3>
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+
+        <!-- 🌐 Web Development Section -->
+  <section id="web-dev">
+    <div class="icon">💻</div>
+    <h2>Web Development</h2>
+    <div class="card">
+      <p>
+        I build fast, responsive, and dynamic websites using modern web technologies
+        like <strong>HTML</strong>, <strong>CSS</strong>, <strong>JavaScript</strong>, and <strong>React</strong>.
+        My focus is on creating digital experiences that are optimized for performance and usability.
+      </p>
+      <a href="#uiux" class="btn">Next: UI/UX Design</a>
+    </div>
+  </section>
+
+  <!-- 🎨 UI/UX Design Section -->
+  <section id="uiux">
+    <div class="icon">🎨</div>
+    <h2>UI / UX Design</h2>
+    <div class="card">
+      <p>
+        I craft user-centered designs that are both visually appealing and intuitive.
+        From wireframes to high-fidelity prototypes, I ensure every interaction
+        feels smooth and meaningful — blending beauty with usability.
+      </p>
+      <a href="#app-integration" class="btn">Next: App Integration</a>
+    </div>
+  </section>
+
+  <!-- ⚙️ App Integration Section -->
+  <section id="app-integration">
+    <div class="icon">⚙️</div>
+    <h2>App Integration</h2>
+    <div class="card">
+      <p>
+        I integrate APIs, databases, and third-party tools to enhance application
+        functionality and automate workflows. From payment gateways to data analytics,
+        I make your web apps smarter and more efficient.
+      </p>
+      <a href="#web-dev" class="btn">Back to Top</a>
+    </div>
+  </section>
+
 
 </body>
 </html>
