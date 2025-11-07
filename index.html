@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hello world</title>
+
+    <style>
+
+   *{
+    margin: 0;
+    padding:0;
+
+}
+
+body{
+    background-image: linear-gradient(45deg,rgb(230, 91, 91) , rgb(84, 84, 245));
+    width:100%;
+    height: 100vh;
+}
+
+.navbar {
+text-decoration: none;
+ /* width: 100%; */
+   height: 20px;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+/* background-color: white; */
+  align-items: center;
+}
+
+.navbar a{
+   text-decoration: none;
+    color: coral;
+    align-items: center;
+    font-size: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+.navlinks {
+text-decoration: none;
+ display: flex;
+ gap: 20px;
+ align-items: center;
+list-style: none;
+}
+
+.navlinks a {
+text-decoration: none;
+
+color: white;
+font-size: 30px;
+
+align-items: center;
+font-family: cursive;
+display: flex;
+
+}
+
+.nav {
+
+    width: 70px;
+    height: 30px;
+    border-radius: 20px;
+    font-family: cursive;
+    
+
+}
+.nav a{
+    font-size: 12px;
+    color: black;
+}
+
+.container {
+
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+.headingtext {
+
+    font-family: cursive;
+    font-weight: 700;
+    font-size: 30px;
+    color: goldenrod;
+}
+
+.headingpara {
+    color: azure;
+}
+
+  .leftside {
+display: flex;
+flex-direction: column;
+text-align: center;
+gap: 40px;
+width: 50%;
+}
+
+
+.rightside {
+
+    display: flex;
+    margin-top: 5%;
+    width: 40%;
+    height: 60%;
+}
+
+ .about-section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 60px 10%;
+      background: linear-gradient(135deg, #e0f7ff, #f4f9ff);
+    }
+
+    .about-left {
+      flex: 1 1 45%;
+      min-width: 300px;
+    }
+
+    .about-left h1 {
+      font-size: 2.5rem;
+      color: var(--primary-color);
+      margin-bottom: 20px;
+    }
+
+    .about-left p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .about-left .btn {
+      display: inline-block;
+      background: var(--primary-color);
+      color: #fff;
+      padding: 10px 25px;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .about-left .btn:hover {
+      background: var(--accent-color);
+    }
+
+    .about-right {
+      flex: 1 1 45%;
+      min-width: 280px;
+      text-align: center;
+    }
+
+    .about-right .image-placeholder {
+      width: 100%;
+      height: 300px;
+      background: repeating-linear-gradient(
+        45deg,
+        #d8f3ff,
+        #d8f3ff 10px,
+        #b2e9ff 10px,
+        #b2e9ff 20px
+      );
+      border-radius: 15px;
+      border: 2px dashed var(--primary-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary-color);
+      font-weight: 600;
+      font-size: 1.2rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+
+    
+      .about-section {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .about-left, .about-right {
+        flex: 1 1 100%;
+      }
+
+      .about-right {
+        margin-top: 30px;
+      }
+    }
+
+.service-section {
+    text-align: center;
+    padding: 80px 10%;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fac4c4 99%, #fad0c4 100%);
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .service-title {
+    font-size: 2.5rem;
+    color: #fff;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  }
+
+  .service-subtitle {
+    color: #f8f8f8;
+    margin: 10px 0 40px;
+    font-size: 1.2rem;
+  }
+
+  .service-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .service-card {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    width: 300px;
+    padding: 30px 20px;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.3), transparent 60%);
+    transform: scale(0);
+    transition: transform 0.6s ease;
+    z-index: 0;
+  }
+
+  .service-card:hover::before {
+    transform: scale(1);
+  }
+
+  .service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.15);
+  }
+
+  .service-card .icon {
+    font-size: 3rem;
+    color: #ff6f61;
+    margin-bottom: 15px;
+    z-index: 1;
+  }
+
+  .service-card h3 {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+    z-index: 1;
+  }
+
+  .service-card p {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.6;
+    z-index: 1;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .service-container {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .service-card {
+      width: 90%;
+    }
+}
+
+ </style>
+    
+
+
+</head>
+<body>
+    <nav class="navbar">
+        <a href="http//">
+        logo
+        </a>
+        
+
+
+
+<ul class="navlinks">
+  <li><a href="http://">Home</a></li>
+<li><a href="http://">Contact us</a></li>
+<li><a href="#About">About us</a></li>
+<li><a href="#Service">Service</a></li>
+</ul>
+
+<div class="btn">
+   <button class="nav"><a href="signin.html">Sign-in</a></button>
+
+   <button class="nav"><a href="login.html">login</a></button>
+
+</div>
+ </nav>
+
+
+<div class="container">
+
+    <div class="leftside">
+<div class="headingtext">
+    <h1>HELLO WORLD</h1>
+
+</div>
+
+<div class="headingpara">
+    <p>Hello World” is more than just the first phrase every coder prints — it’s a universal symbol of beginnings, creativity, and discovery. It marks the moment when an idea turns into something real, when imagination meets code. Every developer’s journey starts with these two simple words, representing curiosity, learning, and the endless possibilities of technology.</p></div>
+
+    </div>
+
+<div class="rightside">
+
+<img src="img.png.98-removebg-preview (2).png" height="500px">
+</div>
+</div>
+
+ <section class="about-section" id="About">
+    <div class="about-left">
+      <h1>Hello World! 👋</h1>
+      <p>
+        I'm Bhawna, a passionate web developer who loves turning ideas into reality through code. 
+        I enjoy exploring new technologies, designing creative user experiences, 
+        and building responsive, meaningful web applications.
+      </p>
+      <p>
+        When I’m not coding, you’ll find me learning new things, playing games, or experimenting with digital art.
+      </p>
+      <a href="#" class="btn">Know More</a>
+    </div>
+
+    <div class="about-right">
+      <div class="image-placeholder">
+        Your Image Here
+      </div>
+    </div>
+  </section>
+    
+  <section class="service-section" id="Service">
+  <h2 class="service-title">🌍 My Services</h2>
+  <p class="service-subtitle">
+    I love building creative, meaningful, and user-friendly web experiences.
+  </p>
+
+  <div class="service-container">
+    <div class="service-card">
+      <div class="icon">💻</div>
+      <h3>Web Development</h3>
+      <p>
+        Responsive, modern, and high-performance websites built with HTML, CSS, JavaScript, and React.
+      </p>
+    </div>
+
+    <div class="service-card">
+      <div class="icon">🎨</div>
+      <h3>UI / UX Design</h3>
+      <p>
+        Crafting clean, user-focused designs that are both visually appealing and easy to navigate.
+      </p>
+    </div>
+
+    <div class="service-card">
+      <div class="icon">⚙️</div>
+      <h3>App Integration</h3>
+      <p>
+        Seamless integration of APIs and third-party tools to enhance app functionality and automation
+
+        
+
+</body>
+</html>
